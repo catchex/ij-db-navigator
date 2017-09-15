@@ -7,5 +7,7 @@ public enum DataExportFormat {
     HTML,
     XML,
     CSV,
+    MARKDOWN,
+    FORMATTED,
     CUSTOM
 }

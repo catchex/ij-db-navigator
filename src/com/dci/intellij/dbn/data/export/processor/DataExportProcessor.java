@@ -32,6 +32,8 @@ public abstract class DataExportProcessor {
             new CSVDataExportProcessor(),
             new HTMLDataExportProcessor(),
             new XMLDataExportProcessor(),
+            new FormattedDataExportProcessor(),
+            new MarkdownDataExportProcessor(),
             new CustomDataExportProcessor()};
 
     public static DataExportProcessor getExportProcessor(DataExportFormat format) {

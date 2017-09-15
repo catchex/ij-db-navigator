@@ -43,6 +43,8 @@ public class ExportDataForm extends DBNFormImpl<ExportDataDialog> {
     private JRadioButton formatHTMLRadioButton;
     private JRadioButton formatXMLRadioButton;
     private JRadioButton formatExcelXRadioButton;
+    private JRadioButton formatFormattedRadioButton;
+    private JRadioButton formatMarkdownRadioButton;
 
     private JTextField valueSeparatorTextField;
     private JRadioButton destinationClipboardRadioButton;
@@ -80,6 +82,8 @@ public class ExportDataForm extends DBNFormImpl<ExportDataDialog> {
         formatExcelRadioButton.addActionListener(actionListener);
         formatExcelXRadioButton.addActionListener(actionListener);
         formatCSVRadioButton.addActionListener(actionListener);
+        formatFormattedRadioButton.addActionListener(actionListener);
+        formatMarkdownRadioButton.addActionListener(actionListener);
         formatCustomRadioButton.addActionListener(actionListener);
         destinationClipboardRadioButton.addActionListener(actionListener);
         destinationFileRadioButton.addActionListener(actionListener);
@@ -100,6 +104,8 @@ public class ExportDataForm extends DBNFormImpl<ExportDataDialog> {
         formatHTMLRadioButton.setSelected(format == DataExportFormat.HTML);
         formatXMLRadioButton.setSelected(format == DataExportFormat.XML);
         formatCSVRadioButton.setSelected(format == DataExportFormat.CSV);
+        formatMarkdownRadioButton.setSelected(format == DataExportFormat.MARKDOWN);
+        formatFormattedRadioButton.setSelected(format == DataExportFormat.FORMATTED);
         formatCustomRadioButton.setSelected(format == DataExportFormat.CUSTOM);
 
         valueSeparatorTextField.setText(instructions.getValueSeparator());
@@ -174,6 +180,8 @@ public class ExportDataForm extends DBNFormImpl<ExportDataDialog> {
             formatHTMLRadioButton.isSelected() ? DataExportFormat.HTML :
             formatXMLRadioButton.isSelected() ? DataExportFormat.XML :
             formatCSVRadioButton.isSelected() ? DataExportFormat.CSV :
+            formatMarkdownRadioButton.isSelected() ? DataExportFormat.MARKDOWN :
+            formatFormattedRadioButton.isSelected() ? DataExportFormat.FORMATTED :
             formatCustomRadioButton.isSelected() ? DataExportFormat.CUSTOM : null;
     }
 
